@@ -1,18 +1,16 @@
 // Select color input
-//var paint = $('#colorPicker').val();
+var paint = $('#colorPicker').val();
 // Select size input
-//var rows = $('#inputHeight').val();
-//var cols = $('#inputWidth').val();
+var N = $('#inputHeight').val();
+var M = $('#inputWidth').val();
 // When size is submitted by the user, call makeGrid()
 $(document).ready(function() {
 	$('#sizePicker').submit(function makeGrid(grid) {
     $('table tr').remove();
 // Your code goes here!
- var rows = $('#inputHeight').val();
- var cols = $('#inputWidth').val();
-	for (var i = 1; i <= rows; i++){
+	for (var i = 1; i <= N; i++){
 		$('table').append('<tr></tr>');
-			for (var j = 1; j <= cols; j++){
+			for (var j = 1; j <= M; j++){
 				$('tr:last').append('<td></td>');
 				$('td').attr("class", 'cells');
 			}
@@ -20,7 +18,6 @@ $(document).ready(function() {
    grid.preventDefault();
 
  $('.cells').click(function(event){
-	var paint = $('#colorPicker').val();
 	$(event.target).css('background-color', paint);
     });
   });
